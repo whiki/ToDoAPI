@@ -13,4 +13,4 @@ I used mongoose to setup my schema and it can be seen in the model file (tasks.j
 # Things I still need to learn.
 React.
 
-I look forward to any errors or changes in this code base. When you PR, holla at me on twitter @olagoketobi
+I look forward to any errors or changes in this code base. When you PR, holla at me on twitter [@olagoketobi] (https://twitter.com/olagoketobi)
