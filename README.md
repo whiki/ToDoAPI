@@ -10,7 +10,7 @@ I used mongoose to setup my schema and it can be seen in the model file (tasks.j
 1. I want to design the ```Task.get``` such that the user can get the tasks either date, completed or name query.
 2. I want to convert the array gotten from ```Task.get``` into a json object.
 
-#Things I still need to learn.
+# Things I still need to learn.
 React.
 
 I look forward to any errors or changes in this code base. When you PR, holla at me on twitter @olagoketobi
