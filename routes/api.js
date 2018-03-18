@@ -4,22 +4,28 @@ const Task = require('../model/tasks');
 
 //Get Request
 router.get('/task', function(req, res, next){
-	if(true){
-		Task.find({completed: req.query.completed}).then(function(task){
-			res.send(task);
+	const completed = req.query.completed === undefined ? undefined : req.query.completed,
+	      name = req.query.name,
+	      date = req.query.date;
+	Task.find({
+	'$or': [
+		{'completed': completed},
+		{'name': name},
+		{'date': date}
+	]
+	}).then(function(task){
+	     return res.json({
+	     success: true,
+	     body: task});
+	})
+	.catch(function(error){
+	   console.log(`fetch TASK error is -> ${JSON.stringify(error)}`);
+		return res.json({
+		   success: false,
+			message: 'Please check the items and try again'
 		});
-	} else if(true){
-		Task.find({name: req.query.name}).then(function(task){
-			res.send(JSON.parse(JSON.stringify(task)));
-		});
-	} else if(true){
-		Task.find({date: req.query.date}).then(function(task){
-			res.send(task);
-		if (!task){
-			res.send('NO RESULT');
-			};
-		});
-	};
+	});
+	
 });
 
 //Post Request
